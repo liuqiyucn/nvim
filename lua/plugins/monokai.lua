@@ -33,6 +33,7 @@ return {
       "which-key",
       "lualine",
       "float_win",
+      "which-key",
     },
     plugins = {
       bufferline = {

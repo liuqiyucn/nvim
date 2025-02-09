@@ -37,19 +37,20 @@ return {
         sources = {
             default = { 'lsp', 'path', 'snippets', 'buffer' },
             cmdline = {},
+
             providers = {
                 lsp = {
-                    min_keyword_length = 3,
+                    -- min_keyword_length = 3,
                     score_offset = 0,
                 },
                 path = {
-                    min_keyword_length = 0,
+                    -- min_keyword_length = 0,
                 },
                 snippets = {
-                    min_keyword_length = 2,
+                    -- min_keyword_length = 2,
                 },
                 buffer = {
-                    min_keyword_length = 5,
+                    -- min_keyword_length = 5,
                     max_items = 5,
                 },
             },
