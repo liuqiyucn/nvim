@@ -61,7 +61,8 @@ return {
     vim.keymap.set("n", "<leader>sd", builtin.diagnostics, { desc = "Search Diagnostics" })
     vim.keymap.set("n", "<leader>s.", builtin.oldfiles, { desc = 'Search Recent Files ("." for repeat)' })
     vim.keymap.set("n", "<leader>s:", builtin.command_history, {desc = "Command History"})
-    -- vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "Find existing buffers" })
+    vim.keymap.set("n", "<leader>sc", builtin.colorscheme, {desc = "Colorscheme"})
+    vim.keymap.set("n", "<leader>s<leader>", builtin.buffers, { desc = "Find Existing Buffers" })
 
     vim.keymap.set("n", "<leader>/", function()
       builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
