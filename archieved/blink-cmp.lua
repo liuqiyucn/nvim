@@ -1,5 +1,6 @@
 return {
     'saghen/blink.cmp',
+    enabled = false,
     event = { "BufReadPost", "BufNewFile" },
     cmd = { "LspInfo", "LspInstall", "LspUninstall" },
     dependencies = {

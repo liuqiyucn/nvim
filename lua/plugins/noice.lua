@@ -17,20 +17,20 @@ return {
 		-- },
 		--
 
-		routes = {
-			{
-				filter = {
-					event = "msg_show",
-					any = {
-						{ find = "%d+L, %d+B" },
-						{ find = "; after #%d+" },
-						{ find = "; before #%d+" },
-					},
-				},
-				view = "mini",
-			},
-		},
-
+		-- routes = {
+		-- 	{
+		-- 		filter = {
+		-- 			event = "msg_show",
+		-- 			any = {
+		-- 				{ find = "%d+L, %d+B" },
+		-- 				{ find = "; after #%d+" },
+		-- 				{ find = "; before #%d+" },
+		-- 			},
+		-- 		},
+		-- 		view = "mini",
+		-- 	},
+		-- },
+		--
 		presets = {
 			bottom_search = false, -- use a classic bottom cmdline for search
 			command_palette = true, -- position the cmdline and popupmenu together
