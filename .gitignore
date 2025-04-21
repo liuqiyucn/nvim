@@ -1,0 +1,19 @@
+# macOS system files
+.DS_Store
+
+# Swap, backup, and undo files
+*.swp
+*.swo
+*.swn
+*~
+
+# Neovim cache
+.cache/
+luacache/
+lazy-lock.json
+
+# LSP logs (if you log them)
+*.log
+
+# Lazy plugin downloads (if not part of your config)
+lua/lazy-lock.json
