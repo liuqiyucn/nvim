@@ -2,7 +2,7 @@
 local opts = { noremap = true, silent = true }
 
 vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+vim.g.maplocalleader = "\\"
 
 -- exiting insert mode
 vim.keymap.set({ "i" }, "jk", "<Esc>", { silent = true, desc = "Exiting Insert Mode" })
@@ -59,17 +59,3 @@ vim.keymap.set("v", ">", ">gv", opts)
 
 -- Keep last yanked text when pasting
 vim.keymap.set("v", "p", '"_dP', opts)
-
-
--- Snacks.toggle.option("spell", { name = "Spelling" }):map("<leader>us")
--- Snacks.toggle.option("wrap", { name = "Wrap" }):map("<leader>uw")
--- Snacks.toggle.option("relativenumber", { name = "Relative Number" }):map("<leader>uL")
--- Snacks.toggle.diagnostics():map("<leader>ud")
--- Snacks.toggle.line_number():map("<leader>ul")
--- Snacks.toggle.treesitter():map("<leader>uT")
--- Snacks.toggle.option("background", { off = "light", on = "dark" , name = "Dark Background" }):map("<leader>ub")
--- Snacks.toggle.dim():map("<leader>uD")
--- Snacks.toggle.animate():map("<leader>ua")
--- Snacks.toggle.indent():map("<leader>ug")
--- Snacks.toggle.scroll():map("<leader>uS")
-

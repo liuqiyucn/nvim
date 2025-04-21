@@ -22,11 +22,13 @@ return {
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-path",
+    "micangl/cmp-vimtex",
   },
   config = function()
     local cmp = require("cmp")
     local luasnip = require("luasnip")
     luasnip.config.setup({})
+
 
     local kind_icons = {
       Text = "󰉿",
@@ -55,6 +57,29 @@ return {
       Operator = "󰆕",
       TypeParameter = "󰊄",
     }
+
+
+    local formatting = {
+      fields = { "kind", "abbr", "menu" },
+
+      format = function(entry, vim_item)
+        if entry.source.name == "vimtex" then
+          vim_item.kind = ""
+          vim_item.menu = "[TeX]"
+        else
+          vim_item.kind = string.format("%s", kind_icons[vim_item.kind] or "")
+          vim_item.menu = ({
+            nvim_lsp = "[LSP]",
+            buffer = "[Buffer]",
+            path = "[Path]",
+            luasnip = "[Snip]",
+          })[entry.source.name] or ""
+        end
+        return vim_item
+      end,
+
+    }
+
     cmp.setup({
       snippet = {
         expand = function(args)
@@ -73,6 +98,13 @@ return {
         ["<C-b>"] = cmp.mapping.scroll_docs(-4),
         ["<C-f>"] = cmp.mapping.scroll_docs(4),
         ["<C-y>"] = cmp.mapping.confirm({ select = true }), -- snippets
+
+
+
+        ["<CR>"] = cmp.mapping.confirm({
+          select = false,
+        }),
+
         ["<C-Space>"] = cmp.mapping.complete({}), -- triggers completion manually
 
         ["<C-l>"] = cmp.mapping(function()
@@ -113,21 +145,22 @@ return {
         { name = "nvim_lsp" },
         { name = "buffer" },
         { name = "path" },
+        { name = 'vimtex', },
         { name = "luasnip" },
       },
-      formatting = {
-        fields = { "kind", "abbr", "menu" },
-        format = function(entry, vim_item)
-          vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
-          vim_item.menu = ({
-            nvim_lsp = "[LSP]",
-            buffer = "[Buffer]",
-            path = "[Path]",
-            luasnip = "[Snippet]",
-          })[entry.source.name]
-          return vim_item
-        end,
+      formatting = formatting,
+    })
+
+
+    cmp.setup.filetype("tex", {
+      sources = {
+        { name = 'vimtex' },
+        { name = 'buffer' },
+        { name = 'path' },
+        { name = 'luasnip'},
       },
     })
+
+
   end,
 }

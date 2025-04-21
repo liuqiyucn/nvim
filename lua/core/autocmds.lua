@@ -77,3 +77,14 @@ vim.api.nvim_create_autocmd("CmdwinEnter", {
     vim.cmd("close")
   end,
 })
+--
+-- vim.api.nvim_create_autocmd("BufWinEnter", {
+--   pattern = "*",
+--   callback = function()
+--     if vim.bo.filetype == "qf" then
+--       vim.schedule(function()
+--         vim.cmd("cclose")
+--       end)
+--     end
+--   end,
+-- })

@@ -1,0 +1,3 @@
+-- vim.g.maplocalleader = "\\"
+
+

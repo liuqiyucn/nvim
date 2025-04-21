@@ -7,7 +7,7 @@ return {
   keys = {
     ---@diagnostic disable-next-line: undefined-global
     { "<leader>bd", function() Snacks.bufdelete() end, desc = "Delete Current Buffer" },
-    { "<leader>un", function() Snacks.notifier.hide() end, desc = "Dismiss All Notifications" },
+    -- { "<leader>un", function() Snacks.notifier.hide() end, desc = "Dismiss All Notifications" },
     { "<leader>n", function() Snacks.notifier.show_history() end, desc = "Notifications History"},
   },
   opts = {
@@ -66,6 +66,7 @@ return {
 
         -- Create some toggle mappings
         Snacks.toggle.option("spell", { name = "Spelling" }):map("<leader>us")
+        Snacks.toggle.animate():map("<leader>ua")
         Snacks.toggle.option("wrap", { name = "Wrap" }):map("<leader>uw")
         Snacks.toggle.option("relativenumber", { name = "Relative Number" }):map("<leader>uL")
         Snacks.toggle.diagnostics():map("<leader>ud")

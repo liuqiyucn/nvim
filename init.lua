@@ -12,3 +12,17 @@ require("core/autocmds")
 require("core/options")
 require("core/keymaps")
 require("lazy").setup("plugins")
+
+-- In init.lua or a plugin/lua config file
+vim.cmd([[
+  function! s:TexFocusVim() abort
+    silent execute "!open -a Ghostty"
+    redraw!
+  endfunction
+
+  augroup vimtex_event_focus
+    au!
+    au User VimtexEventViewReverse call s:TexFocusVim()
+  augroup END
+]])
+
