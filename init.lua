@@ -25,4 +25,3 @@ vim.cmd([[
     au User VimtexEventViewReverse call s:TexFocusVim()
   augroup END
 ]])
-
