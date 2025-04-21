@@ -11,6 +11,7 @@
 .cache/
 luacache/
 lazy-lock.json
+.luarc.json
 
 # LSP logs (if you log them)
 *.log
