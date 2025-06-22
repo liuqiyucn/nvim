@@ -19,11 +19,11 @@ end, { silent = true, desc = "Clear search highlight or behave as normal <Esc>" 
 -- vim.keymap.set("n", "q:", "<Nop>", { silent = true })
 
 -- Lazy
-vim.keymap.set("n", "<leader>l", "<cmd> Lazy <CR>", {silent = true, desc = "Lazy"})
+vim.keymap.set("n", "<leader>l", "<cmd> Lazy <CR>", { silent = true, desc = "Lazy" })
 
 -- Quit file
-vim.keymap.set("n", "<leader>qq", "<cmd>qa<CR>", {silent = true, desc = "Quit Neovim"})
-vim.keymap.set("n", "<leader>qw", "<cmd> close<CR>", {silent = true, desc = "Close Current Window"})
+vim.keymap.set("n", "<leader>qq", "<cmd>qa<CR>", { silent = true, desc = "Quit Neovim" })
+vim.keymap.set("n", "<leader>qw", "<cmd> close<CR>", { silent = true, desc = "Close Current Window" })
 
 -- Delete single character without copying into register
 vim.keymap.set("n", "x", '"_x', opts)
@@ -38,14 +38,14 @@ vim.keymap.set("n", "<Down>", ":resize +2<CR>", opts)
 vim.keymap.set("n", "<Left>", ":vertical resize -2<CR>", opts)
 vim.keymap.set("n", "<Right>", ":vertical resize +2<CR>", opts)
 
-vim.keymap.set("n", "]b", "<cmd> bnext <CR>",{silent = true, desc = "Go to Next Buffer"})
-vim.keymap.set("n", "[b", "<cmd> bprevious <CR>", {silent = true, desc = "Go to Previous Buffer"})
+vim.keymap.set("n", "]b", "<cmd> bnext <CR>", { silent = true, desc = "Go to Next Buffer" })
+vim.keymap.set("n", "[b", "<cmd> bprevious <CR>", { silent = true, desc = "Go to Previous Buffer" })
 
 -- Window management
-vim.keymap.set("n", "<leader>wv", "<C-w>v", {silent = true, desc = "Open Vertical Window Split"}) -- Split window vertically
-vim.keymap.set("n", "<leader>wh", "<C-w>s", {silent = true, desc = "Open Horizontal Window Split"}) -- Split window horizontally
-vim.keymap.set("n", "<leader>w=", "<C-w>=", {silent = true, desc = "Make split windows equal width & height"}) -- Make split windows equal width & height
-vim.keymap.set("n", "<leader>wd", "<cmd> close<CR>",{silent = true, desc = "Close current split window"}) -- Close current split window
+vim.keymap.set("n", "<leader>wv", "<C-w>v", { silent = true, desc = "Open Vertical Window Split" }) -- Split window vertically
+vim.keymap.set("n", "<leader>wh", "<C-w>s", { silent = true, desc = "Open Horizontal Window Split" }) -- Split window horizontally
+vim.keymap.set("n", "<leader>w=", "<C-w>=", { silent = true, desc = "Make split windows equal width & height" }) -- Make split windows equal width & height
+vim.keymap.set("n", "<leader>wd", "<cmd> close<CR>", { silent = true, desc = "Close current split window" }) -- Close current split window
 
 -- Navigate between splits
 vim.keymap.set("n", "<C-k>", "<cmd> wincmd k<CR>", opts) -- Config 2
